@@ -9,8 +9,9 @@ profile:
   image: prof_pic.jpg
   address: > 
     <p>nix#2718</p>   
+    <p>e</p>
     <p>800-273-8255</p>   
-    <p>california</p>
+    <p>calrifona</p>
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -27,7 +28,7 @@ i like linear algebra, differential equations, and long walks on the beach.
 \
 [here are some math things ive done if you want to look at them for some reason](./blog)
 
-<img src="../assets/img/2prof_pic.jpg" alt="spaget" width="300"/>
+<img src="./assets/img/2prof_pic.jpg" alt="spaget" width="300"/>
 
 $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
