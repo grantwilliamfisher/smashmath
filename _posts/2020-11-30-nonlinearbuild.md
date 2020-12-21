@@ -13,7 +13,7 @@ $$\begin{align*}
 \frac{dy}{dt}=&\frac{y}{y_0}\big[G_{x1}(x-x_0)+G_{y1}(y-y_0)\big]\\
 \end{align*}$$
 
-will have a locally linear critical point at $(0,0)$ and $(x_0,y_0)$, for which the latter has a corresponding linear system
+will have a locally linear critical point at $$(0,0)$$ and $$(x_0,y_0)$$, for which the latter has a corresponding linear system
 
 $$\begin{equation}
 \frac{d}{dt}\begin{bmatrix}x-x_0\\y-y_0\end{bmatrix}
