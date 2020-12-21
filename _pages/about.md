@@ -11,24 +11,22 @@ profile:
     <p>nix#2718</p>   
     <p>e</p>
     <p>800-273-8255</p>   
-    <p>calrifona</p>
+    <p>calrifona CA</p>
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
+
+<img src="./assets/img/2prof_pic.jpg" alt="spaget" width="300"/>
 \
 \
 \
-i like linear algebra, differential equations, and long walks on the beach.
-\
-\
+i like linear algebra, differential equations, and long walks on the beach. :sunglasses:
 \
 \
 \
 [here are some math things ive done if you want to look at them for some reason](./blog)
-
-<img src="./assets/img/2prof_pic.jpg" alt="spaget" width="300"/>
 
 $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
