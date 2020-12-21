@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Exponentials of Symmetric Matrices Using the Spectral Theorem
-date: 2020-12-01 11:12:00-0400
+date: 2020-12-01 11:12:00-0000
 description: yeah
 comments: true
 ---
