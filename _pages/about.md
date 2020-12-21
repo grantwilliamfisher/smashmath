@@ -25,7 +25,7 @@ i like linear algebra, differential equations, and long walks on the beach.
 \
 \
 \
-[Here are some math things ive done if you want to look at them for some reason.](./blog)
+[here are some math things ive done if you want to look at them for some reason](./blog)
 
 $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
