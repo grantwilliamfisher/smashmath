@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Smash Math   | Smash Math</title>
+<title>Smash Math   | Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations</title>
 <meta name="description" content="i do math sometimes i guess
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/2x2implicit/">
 
 <!-- Theming-->
 
@@ -119,38 +119,110 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>my math stuff</h1>
-    <h2>i wrote some posts but they're not showing up on github lol</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations</h1>
+    <p class="post-meta">December 20, 2020</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/2x2implicit/">Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations</a></h3>
-        <p class="post-meta">December 20, 2020</p>
-        <p>Implicit and explicit solutions for all cases</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/symmetric-exp/">Exponentials of Symmetric Matrices Using the Spectral Theorem</a></h3>
-        <p class="post-meta">December 1, 2020</p>
-        <p>yeah</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/nonlinearbuild/">Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics</a></h3>
-        <p class="post-meta">November 30, 2020</p>
-        <p>Build a system with desired behavior.</p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <h2 id="two-real-eigenvalues">Two Real Eigenvalues</h2>
+<p>If \(A\) is a real \(2\times 2\) matrix with real eigenvalues \(\lambda_1,\lambda_2\) associated with linearly independent eigenvectors \((v_1,v_2),(w_1,w_2)\) respectively, then the \(2\times2\) system of homogeneous linear first-order differential equations</p>
+
+\[\begin{equation} \tag{1}\label{sys}
+\frac{d}{dt}
+\begin{bmatrix}x\\y\end{bmatrix}
+=A \begin{bmatrix}x\\y\end{bmatrix}
+\end{equation}\]
+
+<p>has the implicit solution</p>
+
+\[\begin{equation} \tag{2}
+\frac{\left(w_2x-w_1y\right)^{\lambda_2}}{\left(v_1y-v_2x\right)^{\lambda_1}}=C
+\end{equation}\]
+
+<p>The solution to the initial value problem</p>
+
+\[\begin{equation} \tag{3}\label{IVP}
+\frac{d}{dt}\begin{bmatrix}x\\y\end{bmatrix}=A\begin{bmatrix}x\\y\end{bmatrix},\quad
+\begin{bmatrix}x(0)\\y(0)\end{bmatrix}=\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}\]
+
+<p>will be</p>
+
+\[\begin{equation} \tag{4}
+\begin{bmatrix}x\\y\end{bmatrix}=
+\begin{bmatrix}v_1&amp;w_1\\v_2&amp;w_2\end{bmatrix}
+\begin{bmatrix}e^{\lambda _1t}&amp;0\\0&amp;e^{\lambda _2t}\end{bmatrix}
+\begin{bmatrix}v_1&amp;w_1\\v_2&amp;w_2\end{bmatrix}^{-1}
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}\]
+
+<p>In the special case that \(A\) is symmetric, the explicit solution can also be expressed in the form</p>
+
+\[\begin{equation}\tag{5}
+\begin{bmatrix}x\\y\end{bmatrix}=
+e^{\lambda_1t}\frac{v\cdot(x_0,y_0)}{|v|^2}\begin{bmatrix}v_1\\v_2\end{bmatrix}+
+e^{\lambda_2t}\frac{w\cdot(x_0,y_0)}{|w|^2}\begin{bmatrix}w_1\\w_2\end{bmatrix}
+\end{equation}\]
+
+<p>See <a href="/blog/2020/symmetric-exp/" target="_blank">here</a> for more information.</p>
+
+<h2 id="complex-eigenvalues-with-a-nonzero-real-part">Complex Eigenvalues with a Nonzero Real Part</h2>
+<p>If \(A\) is a real \(2\times 2\) matrix with complex eigenvalues \(\lambda=a\pm bi\) where neither \(a\) or \(b\) are zero, and \((1,\alpha+i\beta)\) is an eigenvector associated with eigenvalue \(\lambda=a-bi\), then the \(2\times2\) system of homogeneous linear first-order differential equations (\ref{sys})
+has the implicit solution</p>
+
+\[\begin{equation} \tag{6}
+\frac{y-\alpha x}{\beta x}=\tan\left(\frac{b}{2a}\ln[(\beta x)^2+(y-\alpha x)^2]+C\right)
+\end{equation}\]
+
+<p>and the solution to the initial value problem (\ref{IVP})
+is</p>
+
+\[\begin{equation} \tag{7}\label{explicit complex}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{at}\left(\cos(bt)I+\frac{\sin(bt)}{b}(A-aI)\right)
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}\]
+
+<h2 id="purely-imaginary-eigenvalues">Purely Imaginary Eigenvalues</h2>
+<p>If \(A\) is a real \(2\times 2\) matrix with purely imaginary eigenvalues \(\lambda=\pm\omega i\), then the \(2\times2\) system of homogeneous linear first-order differential equations (\ref{sys})
+has the implicit solution</p>
+
+\[\begin{equation} \tag{8}
+\begin{bmatrix}-y&amp;x\end{bmatrix}A
+\begin{bmatrix}x\\y\end{bmatrix}=C
+\end{equation}\]
+
+<p>and the solution to the initial value problem (\ref{IVP})
+is a special case of (\ref{explicit complex}) where \(a=0\)</p>
+
+\[\begin{equation} \tag{9}
+\begin{bmatrix}x\\y\end{bmatrix}=\left(\cos(\omega t)I+\frac{\sin(\omega t)}{\omega}A\right)
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}\]
+
+<h2 id="one-defective-eigenvalue">One Defective Eigenvalue</h2>
+<p>If \(A\) is a real \(2\times 2\) matrix with a defective repeated eigenvalue \(\lambda\) corresponding to  an eigenvector \((v_1,v_2)\) and a generalized eigenvector \((w_1,w_2)\), then the \(2\times2\) system of homogeneous linear first-order differential equations (\ref{sys})
+has the implicit solution</p>
+
+\[\begin{equation} \tag{10}
+(v_1y-v_2x)\exp\left(\lambda\frac{w_1y-w_2x}{v_1y-v_2x}\right)=C
+\end{equation}\]
+
+<p>and the solution to the initial value problem (\ref{IVP})
+will be</p>
+
+\[\begin{equation} \tag{11}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{\lambda t}\left(\begin{bmatrix}x_0\\y_0\end{bmatrix}+t
+\frac{v_1y_0-v_2x_0}{v_1w_2-v_2w_1}\begin{bmatrix}v_1\\v_2\end{bmatrix}\right)
+\end{equation}\]
+
+  </article>
 
   
-
 
 </div>
 
