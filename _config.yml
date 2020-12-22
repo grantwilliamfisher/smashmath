@@ -61,7 +61,7 @@ google_analytics: UA-XXXXXXXXX # out your google-analytics code
 # -----------------------------------------------------------------------------
 
 blog_name: my math stuff  # your blog must have a name for it to show up in the nav bar
-blog_description: i wrote these. they're not that interesting.
+blog_description: i wrote some posts but they're not showing up on github lol
 permalink: /blog/:year/:title/
 
 # Pagination
