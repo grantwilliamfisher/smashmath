@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics
-date: 2020-11-30 
+date: 2020-11-30 0
 description: Build a system with desired behavior.
+comments: true
 ---
 
 The nonlinear system of differential equations,
@@ -32,10 +33,14 @@ Let's take an example.
 
 I want a system which behaves like the system
 
-$$\frac{d}{dt}\begin{bmatrix}x\\y\end{bmatrix}
-=\begin{bmatrix}0&1\\-1&0\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$$
+$$\begin{equation}
+\frac{d}{dt}\begin{bmatrix}x\\y\end{bmatrix}
+=\begin{bmatrix}0&1\\-1&0\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}
+\end{equation}$$
 
-at the point $$(1,1)$$. Using the formula that would give me
+at the point $$(1,1)$$. This linear system has the behavior of concentric circles around the origin, so I expect there to be some cycling around my center point.
+
+Using the formula that would give me
 
 $$\begin{align*}
 \frac{dx}{dt}=&x(y-1)\\
@@ -49,20 +54,24 @@ This happens to be a lucky case where we can fairly easily get an implicit solut
 
 Since 
 
-$$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$$
+$$\begin{equation}
+\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}
+\end{equation}$$
 
-$$\frac{dy}{dx}=\frac{y(1-x)}{x(y-1)}$$
+$$\begin{equation}
+\frac{dy}{dx}=\frac{y(1-x)}{x(y-1)}
+\end{equation}$$
 
 And this is a separable equation. :eyes::eyes:
 
-$$\frac{y-1}{y}dy=\frac{1-x}{x}dx$$
-
-$$y-\ln(y)=\ln(x)-x+C$$
-
-$$x+y-\ln(xy)=C$$
+$$\begin{equation}
+x+y-\ln(xy)=C
+\end{equation}$$
 
 If we suppose an arbitrary condition such as $$y(x_0)=y_0$$, then
 
-$$x+y-\ln(xy)=x_0+y_0-\ln(x_0y_0)$$
+$$\begin{equation}
+(x-x_0)+(y-y_0)-\ln\left(\frac{xy}{x_0y_0}\right)=0
+\end{equation}$$
 
-$$(x-x_0)+(y-y_0)-\ln\left(\frac{xy}{x_0y_0}\right)=0$$
+Plotting various solutions with initial points in the first quadrant indeed, as we predicted, shows some cycling around the critical point $$(1,1)$$. Most initial points result in some pretty mishapen ellipse, but initial points very close to the critical point indeed approach something very close to a circle.
